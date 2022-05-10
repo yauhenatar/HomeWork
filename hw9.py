@@ -150,6 +150,7 @@ class Money:
 
 
 # задача 4
+
 class Player:
 
     def __init__(self, nickname):
