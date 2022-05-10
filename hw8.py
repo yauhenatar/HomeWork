@@ -32,8 +32,9 @@ class Human(Matter):
         Human.counter += 1
 
     @classmethod
-    def new_one(cls, name, year, ):
-        return cls(name, (2022-year))
+    def new_one(cls, name, year):
+        from datetime import datetime as dt
+        return cls(name, (dt.now().year-year))
 
     def get_country(self):
         return self.__country
