@@ -153,28 +153,29 @@ class Money:
 
 class Player:
 
-    def __init__(self, nickname):
-        self.nickname = nickname
+    colors = ['red', 'green', 'blue']
+
+    def __init__(self, nick, role='undefined', color='undefined'):
+        self.nick = nick
+        self.role = role
+        self.color = color
 
     def set_color(self):
 
-        colors = ["red", "green", "blue"]
+        if Player.colors:
 
-        while len(colors) >= 0:
-            if len(colors) == 0:
+            if self.color == 'undefined':
 
-                print('Цвет не может быть назначен! Очередь уже заполнена :(')
-                break
-
-            else:
-
-                print('Выберите цвет: ', *colors)
-                player_color = input('Введите цвет: ')
-                print('Выбран цвет: ', player_color, '\n')
-                colors.remove(player_color)
+                print('Выберите цвет: ', *Player.colors)
+                color = input('Введите цвет: ')
+                self.color = color
+                Player.colors.remove(color)
+                print('Выбран цвет: ', color, '\n')
 
 
-#вопросы с незвершением цикла
+        else:
+
+            print('Цвет не может быть назначен! Очередь уже заполнена :(')
 
 # ООП классы, объекты, наследования
 # задача 1
