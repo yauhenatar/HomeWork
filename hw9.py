@@ -26,6 +26,7 @@ class GreatTalent():
         return print(dt.now().year - self.age)
 
 # задача 3
+
 class Horse():
 
     population = 0
@@ -49,6 +50,7 @@ class Horse():
         print(f'{self.name} видит яблоко и кушает его')
 
 # задача 4
+
 class Jockey(Horse):
 
     def __init__(self, name, horse):
@@ -153,24 +155,24 @@ class Money:
 
 class Player:
 
-    colors = ['red', 'green', 'blue']
+    colours = ['red', 'green', 'blue']
 
-    def __init__(self, nick, role='undefined', color='undefined'):
+    def __init__(self, nick, role='undefined', colour='undefined'):
         self.nick = nick
         self.role = role
-        self.color = color
+        self.colour = colour
 
     def set_color(self):
 
-        if Player.colors:
+        if Player.colours:
 
-            if self.color == 'undefined':
+            if self.colour == 'undefined':
 
-                print('Выберите цвет: ', *Player.colors)
-                color = input('Введите цвет: ')
-                self.color = color
-                Player.colors.remove(color)
-                print('Выбран цвет: ', color, '\n')
+                print('Выберите цвет: ', *Player.colours)
+                colour = input('Введите цвет: ')
+                self.colour = colour
+                Player.colours.remove(colour)
+                print('Выбран цвет: ', colour, '\n')
 
 
         else:
@@ -178,7 +180,9 @@ class Player:
             print('Цвет не может быть назначен! Очередь уже заполнена :(')
 
 # ООП классы, объекты, наследования
+
 # задача 1
+
 class ReactAngle:
 
     def __init__(self, first_len=10, second_len=5):
@@ -192,12 +196,14 @@ class ReactAngle:
         return print(('*' * self.first_len + '\n') * self.second_len)
 
 # задача 2
+
 class Square(ReactAngle):
 
     def __int__(self, length=3):
         self.length = length
 
 # задача 3
+
 class Elevator:
 
     def __init__(self, sum_floor=5, cur_floor=3):
@@ -219,6 +225,7 @@ class Elevator:
             return print(f'Лифт опускается на {self.cur_floor} этаж')
 
 # задача 4
+
 class NewElevator(Elevator):
 
     def __init__(self, sum_floor, cur_floor):
