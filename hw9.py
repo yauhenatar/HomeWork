@@ -75,7 +75,7 @@ class UserMail:
 
     def set_email(self):
 
-        email = str(input('Введите новый email: '))
+        email = input('Введите новый email: ')
 
         if email.count('@') == 1 and email.count('.') > 0 and email.rfind('.') > email.find('@'):
 
