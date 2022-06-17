@@ -1,11 +1,12 @@
 import sqlite3
 from sqlite3 import Error
 
-PATH = "C:\\Users\yauhenatar\PycharmProjects\HomeWork\database\sqlite.db"
+"""создание бд и нужных таблиц"""
+
+PATH = "C:\\Users\\yauhenatar\\PycharmProjects\\HomeWork\\app\\workshopDB\\database\\sqlite.db"
 
 
 def execute_query(query):
-
     try:
         connection = sqlite3.connect(PATH)
         cursor = connection.cursor()
@@ -16,7 +17,7 @@ def execute_query(query):
         print(f"Найдена '{e}' ошибка")
 
 
-receipt = """
+create_table_receipt = """
 CREATE TABLE IF NOT EXISTS receipt (
   id          INTEGER PRIMARY KEY AUTOINCREMENT,
   full_name   TEXT,
@@ -32,7 +33,9 @@ CREATE TABLE IF NOT EXISTS receipt (
 );
 """
 
-admins = """
+drop_table_admins = """DROP TABLE admins;"""
+
+create_table_admins = """
 CREATE TABLE IF NOT EXISTS admins (
   id        INTEGER PRIMARY KEY AUTOINCREMENT,
   full_name TEXT NOT NULL,
@@ -41,15 +44,16 @@ CREATE TABLE IF NOT EXISTS admins (
 );
 """
 
-admin = """
+insert_admin = """
 INSERT INTO
   admins (full_name, login, password)
-VALUES  ('Admin', 'admin', 'admin'),
-  ('Лазюк Валерий Семёнович', 'fenya', 'fenyastar1337'),
-  ('Лебедев Артемий Батькович', 'artemiy', 'krutoidizayner4ever');
+VALUES  ('Лазюк Валерий Семёнович', 'fenya', 'fenyastar1337'),
+  ('Васин Ростислав Александрович', 'rostik', 'rostikmillion15'),
+  ('Лебедев Артемий Батькович', 'artemiy', 'krutoidizayner4ever'),
+  ('adminPanel', 'admin', 'admin');
 """
 
-# execute_query(receipt)
-# execute_query(admins)
-# execute_query(admin)
-
+# execute_query(create_table_receipt)
+# execute_query(drop_table_admins)
+# execute_query(create_table_admins)
+# execute_query(insert_admin)
